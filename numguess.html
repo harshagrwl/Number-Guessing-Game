@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+  Number Guessing Game
+</title>
+</head>
+<body onload="alert("Welcome to my Number Guessing Game :)");">
+  <script>
+    numu = prompt("Enter the range of numbers in which you want to play." + "\n" + "For e.g. if your range is 1 to 100, enter 100.")
+		num1 = Math.floor((Math.random()*numu)+1);
+		var count = 0;
+    var key = 1;
+		while(key) {
+		var num = prompt("Please enter a number between 1 to " + numu + ".");
+		if((num > numu)||(num < 1))
+			alert("The number entered is out of the entered range." + "\n" + "Please choose another number.")
+		else if(num > num1) {
+			alert("The number entered is greater than the correct number." + "\n" + "Please choose another number." );
+			count++;
+			}
+		else if(num < num1) {
+			alert("The number entered is lesser than the correct number." + "\n" + "Please choose another number.");
+			count ++;
+			}
+		else {
+      key = 0;
+			count++;
+		}
+}
+alert("Congratulations! You have guessed the correct number in" + count + "guesses");
+		</script>
+	</body>
+</html>
